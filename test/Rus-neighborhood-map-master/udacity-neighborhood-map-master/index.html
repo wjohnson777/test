@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Udacity Neighborhood Map</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <input type="checkbox" id="hamburger" class="hidden-menu-ticker">
+
+    <label class="btn-menu" for="hamburger">
+      <div class="hamburger">
+        <span class="first"></span>
+        <span class="second"></span>
+        <span class="third"></span>
+      </div>
+      <div class="menu-text">Filters</div>
+    </label>
+
+    <aside class="hidden-menu">
+      <input class="filter" placeholder="Filter locations" data-bind="textInput: searchText, valueUpdate: 'afterkeydown'">
+      <ul class="locations" data-bind="foreach: filteredList">
+        <li class="location-item" data-bind="text: $data.title, click: selectLocation"></li>
+      </ul>
+    </aside>
+
+    <aside class="foursquare-info">
+      <div>Data source:</div>
+      <div>Foursquare</div>
+    </aside>
+
+    <main id="mapDiv" class="map"></main>
+  </body>
+  <script src="js/lib/jquery.js"></script>
+  <script src="js/lib/knockout.js"></script>
+  <script src="js/app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTd35vbtYsCm-fUd2M57kf_LUidt8rScM&callback=init&libraries=places" onerror="onGMapsError()"></script>
+</html>
