@@ -1,0 +1,20 @@
+html,
+body {
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+}
+
+.placelist {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  margin-right: 80%;
+}
+
+.listing ul li {
+  cursor: pointer;
+}

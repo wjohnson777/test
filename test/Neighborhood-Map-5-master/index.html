@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+
+    <div id="map"></div>
+    <aside>
+      <div class="placelist">
+        <input class="form-control" data-bind="textInput: searchItem" placeholder="Search" />
+        <ul class="list-group" data-bind="foreach: placeList">
+          <a href="#" class="list-group-item list-group-item-action" data-bind="text: title, click: show"></a>
+        </ul>
+      </div>
+    </aside>
+
+
+    <!-- Knockout.js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyBd7OjpZBBnXXM_uHgmzjlGAwJP7Mnhg3w&callback=initMap" onerror="googleMapsError()">
+    </script>
+  </body>
+</html>
